@@ -1,39 +1,41 @@
-s Script is from www.htmlfreecodes.com, Provided by: Mahmood Bina -->
+<!-- This Script is from www.htmlfreecodes.com, Provided by: Mahmood Bina -->
 <script type='text/javascript' src='http://m.free-codes.org/gh.php?id=2001'></script>
-<meta http-equiv="Content-Language" content="en-us">
-<SCRIPT language=JavaScript>
-<!-- Begin
-function shake(n) {
-if (parent.moveBy) {
-for (i = 10; i > 0; i--) {
-for (j = n; j > 0; j--) {
+<SCRIPT LANGUAGE="JavaScript">
 
-parent.moveBy(-i,0);
-parent.moveBy(0,-i);
-parent.moveBy(-i,0);
-parent.moveBy(0,i);
-parent.moveBy(i,0);
-parent.moveBy(0,-i);
-parent.moveBy(-i,0);
-parent.moveBy(0,i);
-parent.moveBy(i,0);
-parent.moveBy(0,-i);
-parent.moveBy(-i,0);
-parent.moveBy(0,-i);
-parent.moveBy(i,0);
-parent.moveBy(0,i);
-parent.moveBy(i,0);
-parent.moveBy(0,i);
-         }
-      }
-   }
+var yourtext = "* YOUR MESSAGE HERE! *";
+var wedge1="                        ";
+var wedge2="                        ";
+var message1=wedge1+yourtext+wedge2;
+var dir = "lside";
+var speed = 50;
 
+function bouncey() {
 
+	if (dir == "lside") {
+		message2=message1.substring(2,message1.length)+"  ";
+		window.status=message2;
+		setTimeout("bouncey();",speed);
+		message1=message2;
+
+		if (message1.substring(0,1) == "*") {
+			dir="rside";
+		}
+	}
+
+	else {
+		message2="  "+message1.substring(0,message1.length-2);
+		window.status=message2;
+		setTimeout("bouncey();",speed);
+		message1=message2;
+		if (message1.substring(message1.length-1,message1.length) == "*") { 
+			dir="lside";
+		}
+	}
 }
-//  End -->
 
-<!--
-shake(1);
-//-->
- </SCRIPT>
+// -- End Hiding Here -->
+</SCRIPT>
 
+<body onLoad="bouncey()">
+
+<a target="_blank" href="http://free-web-tools.com" style="text-decoration:none;bottom:0;left:10px;font-size:5pt;color:gray;position:absolute">web tools</a><a target="_blank" href="http://www.htmlfreecodes.com" style="font-size: 8pt; text-decoration: none">Html Codes</a>
